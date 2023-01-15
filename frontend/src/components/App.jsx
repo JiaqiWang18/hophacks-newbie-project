@@ -90,7 +90,7 @@ export default function App() {
                   <Team/>
                 </Route>
                     
-                <Route path="/find-teams/new-post">
+                <Route path="/find-teams/new">
                   <NewPost />
                 </Route>
 

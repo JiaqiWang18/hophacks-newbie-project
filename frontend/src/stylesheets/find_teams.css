@@ -1,0 +1,17 @@
+.find-teams-form {
+  height: auto;
+  width: 30vw;
+  max-width: 50rem;
+  margin: auto;
+  border-radius: 5px;
+  box-shadow: 0px 2px 7px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  background-color: rgb(232, 235, 242);
+}
+
+/* mobile breakpoint */
+@media (max-width: 768px) {
+  .find-teams-form {
+    width: 90vw;
+  }
+}
