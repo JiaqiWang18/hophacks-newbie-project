@@ -1,4 +1,4 @@
-import { Grid, TextField, Typography, Box } from "@material-ui/core";
+import { Grid, TextField, Typography, Box, Button } from "@material-ui/core";
 import { Formik } from "formik";
 import React from "react";
 import { withAuthCheck } from "../../util/auth";
@@ -49,9 +49,9 @@ const NewPost = () => {
             }
             if (
               values.num_people_wanted &&
-              (values.num_people_wanted < 1 || values.num_people_wanted > 5)
+              (values.num_people_wanted < 1 || values.num_people_wanted > 4)
             ) {
-              errors.num_people_wanted = "needs to be between 1 and 5";
+              errors.num_people_wanted = "needs to be between 1 and 4";
             }
             if (values.role_needed && values.role_needed.length < 3) {
               errors.role_needed = "needs to be longer than 3 characters";
@@ -67,21 +67,15 @@ const NewPost = () => {
                 </Typography>
               </Box>
 
-              <Grid
-                container
-                alignItems="center"
-                justify="center"
-                direction="column"
-              >
-                <Grid item>
-                  <Box m={1}>
+              <Grid container >
+                <Grid item xs={12}>
+                  <Box m={3}>
                     <TextField
                       id="project_description-input"
                       name="project_description"
                       label="Project description"
                       type="text"
-                      rows={2}
-                      style={{ width: 250 }}
+                      style={{ width: "100%" }}
                       multiline
                       fullWidth
                       required
@@ -92,14 +86,14 @@ const NewPost = () => {
                     />
                   </Box>
                 </Grid>
-                <Grid item>
-                  <Box m={1}>
+                <Grid item xs={4}>
+                  <Box m={3}>
                     <TextField
                       id="num_people_wanted-input"
                       name="num_people_wanted"
                       label="Number of people"
                       type="number"
-                      style={{ width: 250 }}
+                      style={{ width: "100%" }}
                       required
                       value={values.num_people_wanted}
                       onChange={handleChange}
@@ -108,14 +102,14 @@ const NewPost = () => {
                     />
                   </Box>
                 </Grid>
-                <Grid item>
-                  <Box m={1}>
+                <Grid item xs={8}>
+                  <Box m={3}>
                     <TextField
                       id="role_needed-input"
                       name="role_needed"
                       label="Types of roles"
                       type="text"
-                      style={{ width: 250 }}
+                      style={{ width: "100%" }}
                       required
                       value={values.role_needed}
                       onChange={handleChange}
@@ -124,14 +118,14 @@ const NewPost = () => {
                     />
                   </Box>
                 </Grid>
-                <Grid item>
-                  <Box m={1}>
+                <Grid item xs={4}>
+                  <Box m={3}>
                     <TextField
                       id="contact_email-input"
                       name="contact_email"
                       label="Contact Email"
                       type="email"
-                      style={{ width: 250 }}
+                      style={{ width: "100%" }}
                       required
                       value={values.contact_email}
                       onChange={handleChange}
@@ -140,23 +134,35 @@ const NewPost = () => {
                     />
                   </Box>
                 </Grid>
-                <Grid item>
-                  <Box m={1}>
+                <Grid item xs={8}>
+                  <Box marginTop={6} marginLeft={3}>
+                    <Typography style={{ fontSize: '50%', color: 'red'}}>
+                      *** After Submission, your first name and phone number will also be shown. 
+                    </Typography>
+                  </Box>
+                </Grid>
+                <Grid item xs={12}>
+                  <Box m={3}>
                     <TextField
                       id="other_info-input"
                       name="other_info"
                       label="Additional Info"
                       type="text"
-                      style={{ width: 250 }}
+                      style={{ width: "100%" }}
                       multiline
                       value={values.other_info}
                       onChange={handleChange}
                     />
                   </Box>
                 </Grid>
-                <Grid item>
-                  <Box m={1}>
-                    <button disabled={isSubmitting}>Submit</button>
+                <Grid item xs={12}>
+                  <Box marginLeft={3} marginBottom={3}>
+                    <Button 
+                      variant="contained" 
+                      size="large" 
+                      disabled={isSubmitting}>
+                      Submit
+                    </Button>
                   </Box>
                 </Grid>
               </Grid>
