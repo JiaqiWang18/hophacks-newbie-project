@@ -6,6 +6,13 @@ from bson import ObjectId
 recruiting_api = Blueprint('recruitments', __name__)
 
 
+@recruiting_api.route('/', methods=['GET'])
+def get():
+    posts = list(db.recruitments.find({}, {'_id': False}))
+    print(posts)
+    return jsonify({"posts": posts}), 200
+
+
 @recruiting_api.route('/', methods=['POST'])
 @jwt_required
 def create():

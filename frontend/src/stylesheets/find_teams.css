@@ -15,3 +15,72 @@
     width: 90vw;
   }
 }
+
+.post-list {
+  overflow-y: auto;
+}
+
+.card {
+  height: auto;
+  width: 60vw;
+  max-width: 50rem;
+  margin: auto;
+  border-radius: 5px;
+  box-shadow: 0px 2px 7px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  background-color: rgb(232, 235, 242);
+  margin-bottom: 1rem;
+}
+
+.card-body {
+  padding: 1rem;
+}
+
+.card-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.post-fixed-button {
+  position: fixed;
+  bottom: 3rem;
+  right: 3rem;
+}
+
+.circular-red-button {
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  color: white;
+  font-size: 2rem;
+  text-align: center;
+  line-height: 3rem;
+  box-shadow: 0px 2px 7px rgba(0, 0, 0, 0.2);
+  border: none;
+  background-color: #f44336;
+}
+
+.circular-red-button:hover {
+  cursor: pointer;
+  background-color: #e53935;
+}
+
+.card-text {
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.card-content-flex-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card-content-main {
+  width: 70%;
+}
+
+.card-content-contact {
+  width: 30%;
+}

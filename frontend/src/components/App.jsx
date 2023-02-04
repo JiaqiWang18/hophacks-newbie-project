@@ -31,6 +31,7 @@ import Announcements from './announcement/Announcements.jsx';
 import AnnouncementDetails from './announcement/AnnouncementDetails.jsx';
 import Team from "./Team"
 import NewPost from "./findteams/NewPost";
+import FindTeamList from "./findteams/FindTeamList";
 
 export default function App() {
     return (
@@ -92,6 +93,9 @@ export default function App() {
                     
                 <Route path="/find-teams/new">
                   <NewPost />
+                </Route>
+                <Route path="/find-teams">
+                  <FindTeamList />
                 </Route>
 
                 <Route path="/">
